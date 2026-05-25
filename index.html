@@ -1,0 +1,178 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600&display=swap');
+  :root {
+    --navy: #0B1D3A;
+    --navy-deep: #050D1A;
+    --gold: #C4A45A;
+    --gold-light: #D4BA7A;
+    --cream: rgba(255,255,255,0.88);
+    --muted: rgba(255,255,255,0.42);
+  }
+  .slide-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 8px 0;
+  }
+  .slide {
+    background: var(--navy-deep);
+    border-radius: 18px;
+    aspect-ratio: 4/5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 48px 44px;
+    position: relative;
+    overflow: hidden;
+    max-width: 420px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .slide::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 80% 20%, rgba(196,164,90,0.08) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 10% 90%, rgba(11,29,58,0.6) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .slide-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 32px;
+    position: relative;
+  }
+  .slide-label::after {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 1px;
+    background: var(--gold);
+    margin-top: 8px;
+  }
+  .main-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    position: relative;
+  }
+  .headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--cream);
+    margin-bottom: 0;
+    position: relative;
+  }
+  .headline em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+  .divider {
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+    margin: 28px 0;
+    position: relative;
+  }
+  .sub {
+    font-family: 'Raleway', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 280px;
+    position: relative;
+  }
+  .sub strong {
+    color: rgba(255,255,255,0.7);
+    font-weight: 500;
+  }
+  .corner-deco {
+    position: absolute;
+    bottom: 36px;
+    right: 36px;
+    width: 48px;
+    height: 48px;
+    border: 1px solid rgba(196,164,90,0.25);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .corner-deco::after {
+    content: '';
+    width: 28px;
+    height: 28px;
+    border: 1px solid rgba(196,164,90,0.15);
+    border-radius: 50%;
+  }
+  .slide-num {
+    position: absolute;
+    top: 44px;
+    right: 44px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    color: rgba(196,164,90,0.4);
+    letter-spacing: 2px;
+  }
+  .delay-visual {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 32px;
+    position: relative;
+  }
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    opacity: 0.35;
+  }
+  .dot.active { opacity: 1; }
+  .delay-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, rgba(196,164,90,0.6), rgba(196,164,90,0.1));
+    max-width: 80px;
+  }
+  .delay-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: rgba(196,164,90,0.5);
+    text-transform: uppercase;
+  }
+</style>
+
+<div class="slide-wrap">
+  <div class="slide">
+    <span class="slide-num">01</span>
+    <div class="slide-label">Se eu não falasse inglês</div>
+    <div class="main-text">viveria em</div>
+    <h1 class="headline">modo<br><em>delay.</em></h1>
+    <div class="divider"></div>
+    <p class="sub">Enquanto o mundo avança em tempo real, <strong>você aguarda a tradução.</strong></p>
+    <div class="delay-visual">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot active"></div>
+      <div class="delay-line"></div>
+      <div class="delay-label">processando...</div>
+    </div>
+    <div class="corner-deco"></div>
+  </div>
+</div>
